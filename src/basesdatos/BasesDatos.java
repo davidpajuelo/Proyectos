@@ -20,12 +20,7 @@ public class BasesDatos {
     public static void main(String[] args) {
         // TODO code application logic here
         FramePersonas fr= new FramePersonas();
-        ToXMLFactory fac = new ToXMLFactory();
-       
-        ToXMLable mio = fac.build(TiposToXML.XSTREAM);
-        try{
-        mio.toXML(mio, null);
-        }catch(Exception e){}
-         fr.setVisible(true);
+        fr.setVisible(true);
+        
     }
 }

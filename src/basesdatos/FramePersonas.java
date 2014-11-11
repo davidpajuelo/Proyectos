@@ -6,6 +6,9 @@ package basesdatos;
 
 import Datos.Constantes;
 import Datos.FicherosDatos;
+import Datos.TiposToXML;
+import Datos.ToXMLFactory;
+import Datos.ToXMLable;
 import basesdatos.Persona;
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,9 +49,9 @@ public class FramePersonas extends javax.swing.JFrame {
         model.addColumn("NOMBRE");
 
         jTable1.setModel(model);
-        
+        cargarFactoria();
         //cargarPersonasXML();
-        cargarPersonasXstream();
+        //cargarPersonasXstream();
         jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent lse) {
@@ -165,6 +168,14 @@ public class FramePersonas extends javax.swing.JFrame {
         deArrayListATablaCompras(fd.cargarComprasXML(nombre2));
 
 //         JOptionPane.showMessageDialog(this, "Cargado correctamente");
+    }
+    private void cargarFactoria(){
+        ToXMLFactory fac = new ToXMLFactory();
+        ToXMLable mio = fac.build(TiposToXML.JAXB);
+        try{
+        mio.toXML(mio, null);
+        }catch(Exception e){}
+         
     }
 
     //    
