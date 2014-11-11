@@ -1,0 +1,8 @@
+<ListaPersonasMunicipio>
+  <DatosPersona id="1">
+    <nombre>David</nombre>
+  </DatosPersona>
+  <DatosPersona id="2">
+    <nombre>Luis</nombre>
+  </DatosPersona>
+</ListaPersonasMunicipio>
